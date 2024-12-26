@@ -8,6 +8,9 @@ const bodyParser = require("body-parser");
 const path = require("path");
 var cors = require("cors");
 const userRouter = require("./router/user/UserRouter");
+const productRouter = require("./router/product/productRouter");
+const categoryRouter = require("./router/category/categoryRouter");
+
 
 
 connectDB();
@@ -19,6 +22,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(userRouter);
+app.use(productRouter);
+app.use(categoryRouter)
 
 
 
